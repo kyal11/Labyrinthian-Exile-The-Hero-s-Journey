@@ -83,13 +83,13 @@ public class CombatSystem : MonoBehaviour
         {
             if (!enemy.isTrigger && enemy.CompareTag("Boss"))
             {
-                enemy.GetComponent<Boss_Mov>().LoseHealth(attack1);
+                enemy.GetComponent<Boss_Mov>().LoseHealth(attack2);
                 Debug.Log("Hit Boss");
                 // Lakukan tindakan pada Boss yang terkena serangan
             }
             else if (!enemy.isTrigger)
             {
-                enemy.GetComponent<MonsterMov>().LoseHealth(attack1);
+                enemy.GetComponent<MonsterMov>().LoseHealth(attack2);
                 Debug.Log("Hit");
                 // Lakukan tindakan pada enemy yang terkena serangan
             }
@@ -106,17 +106,21 @@ public class CombatSystem : MonoBehaviour
 
             if(!enemy.isTrigger && enemy.CompareTag("Boss"))
             {
-                enemy.GetComponent<Boss_Mov>().LoseHealth(attack1);
+                enemy.GetComponent<Boss_Mov>().LoseHealth(attack3);
                 Debug.Log("Hit Boss");
                 // Lakukan tindakan pada Boss yang terkena serangan
             }
             else if (!enemy.isTrigger)
             {
-                enemy.GetComponent<MonsterMov>().LoseHealth(attack1);
+                enemy.GetComponent<MonsterMov>().LoseHealth(attack3);
                 Debug.Log("Hit");
                 // Lakukan tindakan pada enemy yang terkena serangan
             }
         }
+    }
+    public bool isBlock()
+    {
+        return isBlocking;
     }
 
     private void StartBlock()

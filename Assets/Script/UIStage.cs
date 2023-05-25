@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 public class UIStage : MonoBehaviour
 {
     [SerializeField] private Canvas WinUI;
@@ -21,8 +23,18 @@ public class UIStage : MonoBehaviour
     }
     public void isLose()
     {
+
         Time.timeScale = 0f;
         LoseUI.gameObject.SetActive(true);
+    }
+    public void RestartGame()
+    {
+        // Mendapatkan indeks scene saat ini
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Memuat ulang scene dengan indeks yang sama
+        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1f;
     }
 
 }

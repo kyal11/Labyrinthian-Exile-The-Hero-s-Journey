@@ -56,25 +56,19 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Script\BottomBarController.cs" />
+    <Compile Include="Assets\Script\UIStage.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
-    <Compile Include="Assets\HealtBarFollow.cs" />
     <Compile Include="Assets\Script\TrapScript.cs" />
     <Compile Include="Assets\Script\Boss_Mov.cs" />
-    <Compile Include="Assets\Script\Speaker.cs" />
-    <Compile Include="Assets\Menu\SceneMenu.cs" />
+    <Compile Include="Assets\Script\SceneMenu.cs" />
     <Compile Include="Assets\Script\DialogController.cs" />
-    <Compile Include="Assets\Script\GameController.cs" />
     <Compile Include="Assets\Script\HealtBar.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <Compile Include="Assets\Script\MonsterMov.cs" />
-    <Compile Include="Assets\Bos_Run.cs" />
     <Compile Include="Assets\Script\SpaceTrigger.cs" />
-    <Compile Include="Assets\Script\BackgroundController.cs" />
-    <Compile Include="Assets\Script\StoryScene.cs" />
+    <Compile Include="Assets\Script\Item.cs" />
     <Compile Include="Assets\Script\CombatSystem.cs" />
     <Compile Include="Assets\Script\Finish.cs" />
-    <Compile Include="Assets\Script\UIStage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

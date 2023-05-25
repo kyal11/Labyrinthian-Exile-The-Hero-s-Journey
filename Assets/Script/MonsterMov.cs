@@ -22,6 +22,7 @@ public class MonsterMov : MonoBehaviour
     private bool inRange;
     private bool cooling;
     private float intTimer;
+    private bool playerblock;
 
   
     public Image fillBar;
@@ -143,6 +144,7 @@ public class MonsterMov : MonoBehaviour
     }
     void hitBoxActive()
     {
+        playerblock = FindObjectOfType<CombatSystem>().isBlock();
         Debug.Log("Hit Player");
         hitboxCollider.enabled = true;
         if (hitboxCollider)
@@ -151,9 +153,16 @@ public class MonsterMov : MonoBehaviour
             Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(rayCast.position, distance, raycastMask);
             foreach (Collider2D player in hitPlayer)
             {
-
-                player.GetComponent<HealtBar>().LoseHealth(damage);
-                Debug.Log("Hit Player");
+                if(playerblock == false)
+                {
+                    player.GetComponent<HealtBar>().LoseHealth(damage);
+                    Debug.Log("Hit Player");
+                }
+                else
+                {
+                    Debug.Log("PlayerBlock");
+                }
+                
                 // Lakukan tindakan pada enemy yang terkena serangan
 
             }

@@ -22,6 +22,7 @@ public class Boss_Mov : MonoBehaviour
     private bool inRange;
     private bool cooling;
     private float intTimer;
+    private bool playerblock;
 
     public Image fillBar;
     public float healt;
@@ -143,6 +144,7 @@ public class Boss_Mov : MonoBehaviour
     }
     void hitBoxActive()
     {
+        playerblock = FindObjectOfType<CombatSystem>().isBlock();
         Debug.Log("Hit Player");
         hitboxCollider.enabled = true;
         if (hitboxCollider)
@@ -151,10 +153,15 @@ public class Boss_Mov : MonoBehaviour
             foreach (Collider2D player in hitPlayer)
             {
 
-                player.GetComponent<HealtBar>().LoseHealth(damage);
-                Debug.Log("Hit Player");
-                // Lakukan tindakan pada enemy yang terkena serangan
-
+                if (playerblock == false)
+                {
+                    player.GetComponent<HealtBar>().LoseHealth(damage);
+                    Debug.Log("Hit Player");
+                }
+                else
+                {
+                    Debug.Log("PlayerBlock");
+                }
             }
         }
 
